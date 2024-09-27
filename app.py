@@ -5,7 +5,7 @@ from watchlist import get_stock_data, add_to_watchlist
 app = Flask(__name__)
 
 # Watchlist of default stocks
-watchlist = ["^NSEI", "^NSEBANK", "^CNXFMCG", "^MIDCPNIFTY"]
+watchlist = ["^NSEI", "^NSEBANK", "^CNXFMCG", "^NSEMDCP50"]
 
 @app.route('/')
 def home():

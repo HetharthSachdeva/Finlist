@@ -7,28 +7,35 @@
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>Stock Watchlist</h1>
-    <table>
-        <tr>
-            <th>Stock Symbol</th>
-            <th>Price</th>
-            <th>Today's Open</th>
-            <th>Previous Close</th>
-        </tr>
+    <div class="heading">
+        <h1>FINLIST</h1>
+    </div>
+    <div class="table">
+        <div class="tr">
+            <div class="th">Stock Symbol</div>
+            <div class="th">Price</div>
+            <div class="th">Today's Open</div>
+            <div class="th">Previous Close</div>
+        </div>
         {% for stock in stock_data %}
-        <tr>
-            <td>{{ stock.symbol }}</td>
-            <td>{{ stock.price }}</td>
-            <td>{{ stock.open }}</td>
-            <td>{{ stock.p_close }}%</td>
-        </tr>
+        <div class="tr">
+            <div class="td">{{ stock.symbol }}</div>
+            <div class="td">{{ stock.price }}</div>
+            <div class="td">{{ stock.open }}</div>
+            <div class="td">{{ stock.p_close }}%</div>
+        </div>
         {% endfor %}
-    </table>
+    </div>
 
-    <h2>Add Stock to Watchlist</h2>
+    <div class="form">
+
+
     <form method="POST" action="/add">
         <input type="text" name="stock_symbol" placeholder="Enter Stock Symbol" required>
         <button type="submit">Add</button>
     </form>
+    </div>
+    <h2>Add Stock to Watchlist</h2>
+    
 </body>
 </html>
